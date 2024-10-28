@@ -39,7 +39,7 @@ class ZebraController < ApplicationController
     render({ :template => "app_templates/payment"})
   end
 
-  def payment
+  def payment_results
     @apr = params["user_apr"].to_f.round(4)
     @years = params["user_years"].to_i
     @present_value = params["user_pv"].to_f.round(2)
@@ -71,6 +71,6 @@ class ZebraController < ApplicationController
   
     @random_number = rand(@min..@max)
   
-    render({ :template => "app_templates/random"})
+    render({ :template => "app_templates/random_results"})
   end
 end
